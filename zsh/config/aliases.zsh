@@ -14,4 +14,7 @@ alias dlog="less log/development.log"
 alias tlog="less log/test.log"
 
 # Git
-alias g="git "
+alias g="git"
+
+# Bundler
+alias bi="bundle install"
