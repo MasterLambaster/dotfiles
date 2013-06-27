@@ -4,5 +4,5 @@ let g:Powerline_symbols='fancy'
 
 set laststatus=2 "always show the statusline
 
-colorscheme desert-warm-256
+"colorscheme desert-warm-256
 
