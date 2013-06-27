@@ -49,6 +49,8 @@ Bundle "rainux/vim-desert-warm-256"
   Bundle "scrooloose/nerdtree.git"
   Bundle "kien/ctrlp.vim"
   Bundle "scrooloose/syntastic.git"
+  " Dark theme
+  Bundle "chriskempson/base16-vim"
   " Awesome undo tool
   Bundle "sjl/gundo.vim"
   Bundle "skwp/vim-conque"
@@ -61,8 +63,12 @@ Bundle "rainux/vim-desert-warm-256"
   Bundle "bogado/file-line.git"
   " Buffer and FS explorer
   Bundle "sjbach/lusty.git"
+  " Ctags support & deps
+  Bundle "xolox/vim-easytags"
+  Bundle "xolox/vim-misc"
+  " Autocomplete
+  Bundle "Shougo/neocomplcache.git"
   
-
 " HTML, CSS, Markdown, SASS ...
   " Markdown
   Bundle "jtratner/vim-flavored-markdown.git"
