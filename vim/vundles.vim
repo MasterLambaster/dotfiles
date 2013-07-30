@@ -58,14 +58,15 @@ Bundle "rainux/vim-desert-warm-256"
   " Allow move in camelcase words
   Bundle "vim-scripts/camelcasemotion.git"
   " Automatically update tags on save
-  Bundle "vim-scripts/AutoTag.git"
+  " It's slowing down the vim
+  "Bundle "vim-scripts/AutoTag.git"
   " Open files with line number after colon
   Bundle "bogado/file-line.git"
   " Buffer and FS explorer
   Bundle "sjbach/lusty.git"
   " Ctags support & deps
-  Bundle "xolox/vim-easytags"
-  Bundle "xolox/vim-misc"
+  "Bundle "xolox/vim-easytags"
+  "Bundle "xolox/vim-misc"
   " Autocomplete
   Bundle "Shougo/neocomplcache.git"
   
