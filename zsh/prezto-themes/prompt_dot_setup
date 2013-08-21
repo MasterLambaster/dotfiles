@@ -1,0 +1,43 @@
+function prompt_dot_precmd {
+  # Get Git repository information.
+  if (( $+functions[git-info] )); then
+    git-info on
+    git-info
+  fi
+
+  # Get ruby information
+  if (( $+functions[ruby-info] )); then
+    ruby-info
+  fi
+}
+
+function prompt_dot_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+
+  autoload -Uz add-zsh-hook
+  add-zsh-hook precmd prompt_dot_precmd
+
+  zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
+  zstyle ':prezto:module:editor:info:keymap:primary' format "%B%F{green}$>%f%b"
+  zstyle ':prezto:module:editor:info:keymap:alternate' format "%B%F{magenta}<#%f%b"
+
+  zstyle ':prezto:module:git:info:branch' format '%F{green}%b%f'
+  zstyle ':prezto:module:git:info:modified' format '%%B%F{red}✱%f%%b'
+  zstyle ':prezto:module:git:info:commit' format ':%F{green}%.7c%f'
+  zstyle ':prezto:module:git:info:position' format ':%F{red}%p%f'
+
+  zstyle ':prezto:module:git:info:keys' format \
+    'prompt' '%m%F{green}[$(coalesce "%b" "%p" "%c")%s]%f' \
+
+  # ruby info (rvm, rbenv)
+  zstyle ':prezto:module:ruby:info:version' format '%v'
+
+  PROMPT='${git_info:+${(e)git_info[prompt]}}%F{cyan}[%~% ]%F{red} ❯%f '
+  RPROMPT='%F{yellow}${ruby_info[version]}'
+
+}
+
+prompt_dot_setup "$@"
+
