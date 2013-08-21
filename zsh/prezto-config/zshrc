@@ -1,0 +1,29 @@
+# Load user custom commands
+if [ -d $HOME/.zsh.before/ ]; then
+  if [ "$(ls -A $HOME/.zsh.before/)" ]; then
+    for config_file ($HOME/.zsh.before/*.zsh) source $config_file
+  fi
+fi
+
+# Load prezto init
+if [[ -s "${ZDOTDIR:-$HOME}/.dot/deps/prezto/runcoms/zshrc" ]]; then
+  source "${ZDOTDIR:-$HOME}/.dot/deps/prezto/runcoms/zshrc"
+fi
+
+export LC_CTYPE="en_US.UTF-8"
+
+#source "${HOME}/.dot/zsh/prezto-themes/prompt_skwp_setup"
+
+# Load custom custom configuration
+if [ -d $HOME/.dot/zsh/config/ ]; then
+  if [ "$(ls -A $HOME/.dot/zsh/config/)" ]; then
+    for config_file ($HOME/.dot/zsh/config/*.zsh) source $config_file
+  fi
+fi
+
+if [ -d $HOME/.zsh.after/ ]; then
+  if [ "$(ls -A $HOME/.zsh.after/)" ]; then
+    for config_file ($HOME/.zsh.after/*.zsh) source $config_file
+  fi
+fi
+

@@ -1,0 +1,16 @@
+if [[ -s "${ZDOTDIR:-$HOME}/.dot/deps/prezto/runcoms/zshenv" ]]; then
+  source "${ZDOTDIR:-$HOME}/.dot/deps/prezto/runcoms/zshenv"
+fi
+
+#
+# Editors
+#
+
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
+
+# Set the Less input preprocessor.
+#if (( $+commands[lesspipe.sh] )); then
+#  export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
+#fi
