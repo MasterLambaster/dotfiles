@@ -6,8 +6,8 @@ require 'pathname'
 BASE_DIR = Pathname.new(File.join(ENV['HOME'], ".dot"))
 PREZTO_DIR  =  BASE_DIR.join("deps/prezto")
 
-desc "Install dot distro."
-task :install => [:check_dependencies, :install_prezto, :install_vim] do
+desc "Install dot distro"
+task :install => [:check_dependencies, :install_prezto, :install_vim, :install_git] do
 end
 
 desc "Update dot distro"
@@ -84,6 +84,12 @@ task :install_vim do
   install_vundle_plugins
 end
 
+desc "Install git"
+task :install_git do
+  section_message("Installing GIT configuration")
+  link_file('git/gitconfig')
+end
+
 desc "Uninstall .dot distribution"
 task :uninstall do
   warning("Removing .dot")
@@ -93,7 +99,6 @@ task :uninstall do
     cmd("rm $HOME/.#{File.basename(file)}")
   end
   cmd("rm ${ZDOTDIR:-$HOME}/.zprezto")
-
 end
 
 task :default => 'install'
@@ -122,6 +127,14 @@ def check_bin(name)
     return false
   end
   true
+end
+
+# Link file by relative path
+def link_file(files)
+  Array(files).each do |file|
+    file = BASE_DIR.join(file)
+    cmd "ln -nfs #{file} #{File.join(ENV['HOME'], '.' , File.basename(file))}"
+  end
 end
 
 def llink(files)
