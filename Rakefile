@@ -6,12 +6,103 @@ require 'pathname'
 BASE_DIR = Pathname.new(File.join(ENV['HOME'], ".dot"))
 PREZTO_DIR  =  BASE_DIR.join("deps/prezto")
 
-desc "Install dot distro"
-task :install => [:check_dependencies, :install_prezto, :install_vim, :install_git] do
+desc "Install dot distribution"
+task :install => [:check_dependencies, "prezto:install", "vim:install", "git:install"] do
 end
 
 desc "Update dot distro"
 task :update do
+end
+
+desc "Uninstall dot distribution"
+task :uninstall => ["prezto:uninstall", "vim:uninstall", "git:uninstall"] do
+  warning("Removing .dot")
+  cmd("rm -rf $HOME/.zsh.before")
+  cmd("rm -rf $HOME/.zsh.after")
+  Dir.glob(BASE_DIR.join('zsh/prezto-config/*')).each do |file|
+    cmd("rm $HOME/.#{File.basename(file)}")
+  end
+  cmd("rm ${ZDOTDIR:-$HOME}/.zprezto")
+end
+
+namespace :prezto do
+  desc "Install Prezto"
+  task :install => ["checkout", "update"] do
+    section_message("Installing Prezto")
+
+    # Linking
+    unless File.exists?(File.join(ENV['HOME'], ".zprezto"))
+      info "Linking Prezto"
+      cmd %{ ln -nfs "$HOME/.dot/deps/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
+      # Installing commands
+      llink(Dir.glob(BASE_DIR.join('zsh/prezto-config/*')))
+    end
+
+    info "Creating directories for your customizations"
+    cmd "mkdir -p $HOME/.zsh.before"
+    cmd "mkdir -p $HOME/.zsh.after"
+
+    # Set ZSH as default shell
+    info "Setting zsh as your default shell"
+    if ENV["SHELL"].include?('zsh')
+      message "Zsh is already set as a default shell"
+    else
+      cmd "chsh -s /bin/zsh"
+    end
+  end
+
+  desc "Checkout Perzto"
+  task :checkout do
+    prezto_repo = "https://github.com/sorin-ionescu/prezto.git"
+
+    if File.exists?(PREZTO_DIR)
+      warning("Prezto is already installed, skipping ...")
+      next
+    end
+    cmd("git clone #{prezto_repo} #{PREZTO_DIR}")
+    init_submodules(PREZTO_DIR)
+    update_submodules(PREZTO_DIR)
+  end
+
+  desc "Update prezto"
+  task :update do
+    update_submodules(PREZTO_DIR)
+  end
+
+  desc "Uninstall prezto"
+  task :uninstall do
+
+  end
+end
+
+namespace :vim do
+  desc "Install VIM configuration"
+  task :install do
+    section_message("Installing Vim")
+    info("Linking config file")
+    link_file(['vim/vimrc', 'vim/gvimrc'])
+    link_file('vim')
+    info("Install vundle")
+    install_vundle
+    info("Install vim plugins")
+    install_vundle_plugins
+  end
+
+  desc "Uninstall VIM configuration"
+  task :uninstall do
+  end
+end
+
+namespace :git do
+  desc "Insall GIT configuration"
+  task :install do
+    section_message("Installing GIT configuration")
+    link_file('git/gitconfig')
+  end
+
+  desc "Uninstall GIT configuration"
+  task :uninstall do
+  end
 end
 
 desc "Check .dot install dependencies"
@@ -30,78 +121,8 @@ task :check_dependencies do
   fail('One of the dependencies has not been met, aborting.') if deps.any?{|e| !e}
 end
 
-desc "checkout prezto and its submodules"
-task :checkout_prezto do
-  prezto_repo = "https://github.com/sorin-ionescu/prezto.git"
 
-  if File.exists?(PREZTO_DIR)
-    warning("Prezto is already installed, skipping ...")
-    next
-  end
-  cmd("git clone #{prezto_repo} #{PREZTO_DIR}")
-  init_submodules(PREZTO_DIR)
-  update_submodules(PREZTO_DIR)
-end
-
-task :update_prezto do
-  update_submodules(PREZTO_DIR)
-end
-
-desc "install prezto zsh extentions"
-task :install_prezto => [:checkout_prezto, :update_prezto] do
-  section_message("Installing Prezto")
-
-  # Linking
-  unless File.exists?(File.join(ENV['HOME'], ".zprezto"))
-    info "Linking Prezto"
-    cmd %{ ln -nfs "$HOME/.dot/deps/prezto" "${ZDOTDIR:-$HOME}/.zprezto" }
-    # Installing commands
-    llink(Dir.glob(BASE_DIR.join('zsh/prezto-config/*')))
-  end
-
-  info "Creating directories for your customizations"
-  cmd "mkdir -p $HOME/.zsh.before"
-  cmd "mkdir -p $HOME/.zsh.after"
-
-  # Set ZSH as default shell
-  info "Setting zsh as your default shell"
-  if ENV["SHELL"].include?('zsh')
-    message "Zsh is already set as a default shell"
-  else
-    cmd "chsh -s /bin/zsh"
-  end
-end
-
-desc "Install vim"
-task :install_vim do
-  section_message("Installing Vim")
-  info("Linking config file")
-  llink([BASE_DIR.join('vim/vimrc'), BASE_DIR.join('vim/gvimrc')])
-  llink(BASE_DIR.join('vim'))
-  info("Install vundle")
-  install_vundle
-  info("Install vim plugins")
-  install_vundle_plugins
-end
-
-desc "Install git"
-task :install_git do
-  section_message("Installing GIT configuration")
-  link_file('git/gitconfig')
-end
-
-desc "Uninstall .dot distribution"
-task :uninstall do
-  warning("Removing .dot")
-  cmd("rm -rf $HOME/.zsh.before")
-  cmd("rm -rf $HOME/.zsh.after")
-  Dir.glob(BASE_DIR.join('zsh/prezto-config/*')).each do |file|
-    cmd("rm $HOME/.#{File.basename(file)}")
-  end
-  cmd("rm ${ZDOTDIR:-$HOME}/.zprezto")
-end
-
-task :default => 'install'
+task :default => :install
 
 private
 VT100_COLORS = {
