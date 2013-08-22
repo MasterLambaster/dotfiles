@@ -40,9 +40,11 @@ Bundle "rainux/vim-desert-warm-256"
   Bundle "garbas/vim-snipmate"
   " Snippets pack 
   Bundle "honza/vim-snippets"
+  " Allow move in camelcase words
+  Bundle "vim-scripts/camelcasemotion.git"
 
   " Bundle "godlygeek/tabular"
-  
+
 " General improvements
   Bundle "rking/ag.vim"
   Bundle "jistr/vim-nerdtree-tabs.git"
@@ -55,8 +57,6 @@ Bundle "rainux/vim-desert-warm-256"
   Bundle "sjl/gundo.vim"
   Bundle "skwp/vim-conque"
   " Bundle "Valloric/YouCompleteMe"
-  " Allow move in camelcase words
-  Bundle "vim-scripts/camelcasemotion.git"
   " Automatically update tags on save
   " It's slowing down the vim
   "Bundle "vim-scripts/AutoTag.git"
@@ -69,7 +69,7 @@ Bundle "rainux/vim-desert-warm-256"
   "Bundle "xolox/vim-misc"
   " Autocomplete
   Bundle "Shougo/neocomplcache.git"
-  
+
 " HTML, CSS, Markdown, SASS ...
   " Markdown
   Bundle "jtratner/vim-flavored-markdown.git"
@@ -83,4 +83,4 @@ Bundle "rainux/vim-desert-warm-256"
   Bundle "itspriddle/vim-jquery.git"
   Bundle "kchmck/vim-coffee-script"
   Bundle "tpope/vim-haml"
-   
+
