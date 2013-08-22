@@ -1,7 +1,5 @@
 require 'rake'
-#require 'fileutils'
 require 'pathname'
-
 
 BASE_DIR = Pathname.new(File.join(ENV['HOME'], ".dot"))
 PREZTO_DIR  =  BASE_DIR.join("deps/prezto")
@@ -120,7 +118,6 @@ task :check_dependencies do
   deps << check_bin('zsh')
   fail('One of the dependencies has not been met, aborting.') if deps.any?{|e| !e}
 end
-
 
 task :default => :install
 
