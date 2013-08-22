@@ -1,7 +1,58 @@
-# Hotkeys
+# VIM
+
+## Plugins installes
+
+### Ruby, Rails
+[vim-ruby-debugger](https://github.com/astashov/vim-ruby-debugger)
+[vim-ruby-refactoring](https://github.com/ecomba/vim-ruby-refactoring)
+[vim-rails](https://github.com/tpope/vim-rails)
+[vim-rake](https://github.com/tpope/vim-rake)
+[vim-rvm](https://github.com/tpope/vim-rvm)
+[vim-ruby](https://github.com/vim-ruby/vim-ruby)
+
+### Git
+[vim-fugitive](https://github.com/tpope/vim-fugitive)
+[gitv](https://github.com/gregsexton/gitv)
+
+
+### Editing
+[matchit](https://github.com/vim-scripts/matchit.zip)
+[splitjoin](https://github.com/AndrewRadev/splitjoin.vim)
+[delimitMate](https://github.com/Raimondi/delimitMate)
+[change-inside-surroundings](https://github.com/briandoll/change-inside-surroundings.vim)
+[vim-snipmate](https://github.com/garbas/vim-snipmate)
+[vim-snippets](https://github.com/honza/vim-snippets)
+[tabular](https://github.com/godlygeek/tabular)
+[camelcasemotion](https://github.com/vim-scripts/camelcasemotion)
+
+### Tools
+[ag](https://github.com/rking/ag.vim)
+[nerdtree](https://github.com/scrooloose/nerdtree)
+[ctrlp](https://github.com/kien/ctrlp.vim)
+[syntastic](https://github.com/scrooloose/syntastic)
+[gundo](https://github.com/sjl/gundo.vim)
+[lusty](https://github.com/sjbach/lusty)
+
+### HTML, CSS, Markdown, SASS ...
+
+[vim-flavored-markdown](https://github.com/jtratner/vim-flavored-markdown.git)
+[vim-markdown-preview](https://github.com/nelstrom/vim-markdown-preview)
+[vim-javascript](https://github.com/pangloss/vim-javascript)
+[vim-less](https://github.com/groenewege/vim-less)
+[vim-jquery](https://github.com/itspriddle/vim-jquery)
+[vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
+[vim-haml](https://github.com/tpope/vim-haml)
+
+### Style
+[powerline](https://github.com/Lokaltog/powerline.git)
+[vim-desert-warm](https://github.com/rainux/vim-desert-warm-256)
+
+
+## Hotkeys
 
 ⌘⇧t - New tab
-# NerdTree
+
+### NerdTree
 \n - NerdTree toggle
 ⌃\ - Reveal current file in NerdTree
 
@@ -47,10 +98,10 @@
     middle-click.......same as i for files, same as
                        e for dirs.
 
-# CtrlP
+### CtrlP
 ⌘t - Go to file
 ⌘⇧P - Clear CtrlP cache
-    
+
     ⌃f,⌃b - mode cycle
     ⌃d - filename only search
     ⌃r - regexp mode
@@ -60,7 +111,7 @@
     ⌃y - create a new file and its parent directories
     ⌃z,⌃o - mark/unmark multiple files and open them
 
-# Ag
+### Ag
 ⌘f - Find with Ag
 
     o    to open (same as enter)
@@ -73,50 +124,50 @@
     gv   to open in vertical split silently
     q    to close the quickfix window
 
-# Gundo
-\u - Toggle Gundo
+### Gundo
+    \u - Toggle Gundo
 
-# Matchit 
+### Matchit
 *TODO*
 
 
-# Ruby Debugger
+### Ruby Debugger
 
-\db  Toggle breakpoint
-\dv  Open variables
-\dm  Open breakpoints
-\dt  Open frames
-\ds  Step
-\df  Finish
-\dn  Next
-\dc  Continue
-\de  Exit
-\dd  Remove all breakpoints
+    \db  Toggle breakpoint
+    \dv  Open variables
+    \dm  Open breakpoints
+    \dt  Open frames
+    \ds  Step
+    \df  Finish
+    \dn  Next
+    \dc  Continue
+    \de  Exit
+    \dd  Remove all breakpoints
 
-# Ruby refactoring
+### Ruby refactoring
 
-rap  Add parameter
-rcpc Convert post conditional
-rel  Extract let(Rsepc)
-rec  Extract constant(visual)
-relv Extract local variable(visual)
-rit  Inline temp
-rrlv Rename local variable(visual or cursor)
-rriv Rename instance variable(visual)
-rem  Extract method(visual)
+    rap  Add parameter
+    rcpc Convert post conditional
+    rel  Extract let(Rsepc)
+    rec  Extract constant(visual)
+    relv Extract local variable(visual)
+    rit  Inline temp
+    rrlv Rename local variable(visual or cursor)
+    rriv Rename instance variable(visual)
+    rem  Extract method(visual)
 
-# Split & Join
+### Split & Join
 
-\ss - Split to multiline notation
-\sj - Join to single line notation
+    \ss - Split to multiline notation
+    \sj - Join to single line notation
 
-# Surrounding
-\ci - Change inside surrounding ({}, (), "", ><, [], '', ``)
+### Surrounding
+    \ci - Change inside surrounding ({}, (), "", ><, [], '', ``)
 
-# File & Buffer explorers
+### File & Buffer explorers
 
-\lf  - Opens filesystem explorer.
-\lr  - Opens filesystem explorer at the directory of the current file.
-\lb  - Opens buffer explorer.
-\lg  - Opens buffer grep.
+    \lf  - Opens filesystem explorer.
+    \lr  - Opens filesystem explorer at the directory of the current file.
+    \lb  - Opens buffer explorer.
+    \lg  - Opens buffer grep.
 
