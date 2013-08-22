@@ -4,9 +4,9 @@
 * ru - rvm use
 * ruree - rvm use ree
 
-# PS
+## PS
 * psa - ps aux
-* psg - ps aux | grep 
+* psg - ps aux | grep
 * psr - ps aux | grep ruby
 
 
