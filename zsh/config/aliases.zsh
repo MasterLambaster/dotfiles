@@ -18,3 +18,7 @@ alias g="git"
 
 # Bundler
 alias bi="bundle install"
+
+# Ruby tests
+alias td="testdrb -Itest"
+alias tr="ruby -Itest "
