@@ -2,13 +2,13 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
 let NERDTreeShowHidden=1
-
+let NERDTreeIgnore=['\.git']
 " Jump in nerd tree means vim cd
-" TODO: That's not working by far
 
-  augroup AuNERDTreeCmd
-  autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
-  autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
+" TODO: That's not working by far
+augroup AuNERDTreeCmd
+autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+"autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
 
   " If the parameter is a directory, cd into it
   function s:CdIfDirectory(directory)
