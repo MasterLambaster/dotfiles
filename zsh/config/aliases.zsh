@@ -22,3 +22,8 @@ alias bi="bundle install"
 # Ruby tests
 alias td="testdrb -Itest"
 alias tr="ruby -Itest "
+
+# Vagrant
+alias vr="vagrant restart"
+alias vs="vagrant ssh"
+alias vh="vagrant halt"
