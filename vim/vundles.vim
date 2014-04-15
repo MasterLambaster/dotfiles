@@ -42,7 +42,7 @@ Bundle "rainux/vim-desert-warm-256"
   Bundle "honza/vim-snippets"
   " Allow move in camelcase words
   Bundle "vim-scripts/camelcasemotion.git"
-
+  Bundle "t9md/vim-choosewin"
   " Bundle "godlygeek/tabular"
 
 " General improvements
@@ -56,7 +56,7 @@ Bundle "rainux/vim-desert-warm-256"
   " Awesome undo tool
   Bundle "sjl/gundo.vim"
   Bundle "skwp/vim-conque"
-  " Bundle "Valloric/YouCompleteMe"
+"   Bundle "Valloric/YouCompleteMe"
   " Automatically update tags on save
   " It's slowing down the vim
   "Bundle "vim-scripts/AutoTag.git"
