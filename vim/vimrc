@@ -63,6 +63,11 @@ set noswapfile
 set nobackup
 set nowb
 
+" ================ 80 char line rule ================
+
+set textwidth=80
+set colorcolumn=+1
+
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
