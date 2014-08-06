@@ -67,6 +67,9 @@ set nowb
 
 set textwidth=80
 set colorcolumn=+1
+" Don't wrap text
+set fo-=t
+set fo+=c
 
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
