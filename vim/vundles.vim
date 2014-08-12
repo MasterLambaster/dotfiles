@@ -56,7 +56,8 @@ Bundle "rainux/vim-desert-warm-256"
   " Awesome undo tool
   Bundle "sjl/gundo.vim"
   Bundle "skwp/vim-conque"
-"   Bundle "Valloric/YouCompleteMe"
+  Bundle "Valloric/YouCompleteMe"
+  Bundle "marijnh/tern_for_vim"
   " Automatically update tags on save
   " It's slowing down the vim
   "Bundle "vim-scripts/AutoTag.git"
