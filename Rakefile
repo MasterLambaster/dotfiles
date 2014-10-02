@@ -151,7 +151,7 @@ end
 def link_file(files)
   Array(files).each do |file|
     file = BASE_DIR.join(file)
-    cmd "ln -nfs #{file} #{File.join(ENV['HOME'], '.' , File.basename(file))}"
+    cmd "ln -nfs #{file} #{File.join(ENV['HOME'], "." + File.basename(file))}"
   end
 end
 
