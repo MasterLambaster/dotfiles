@@ -190,12 +190,12 @@ def update_submodules(path)
 end
 
 def install_vundle
-  vundle_path = "https://github.com/gmarik/vundle.git"
-  cmd("git clone #{vundle_path} #{BASE_DIR.join('.vim/bundle/vundle')}")
+  vundle_path = "https://github.com/Shougo/neobundle.vim"
+  cmd("git clone #{vundle_path} #{BASE_DIR.join('vim/bundle/neobundle')}")
 end
 
 def install_vundle_plugins
 #  system "vim --noplugin -u #{ENV['HOME']}/.vim/vundles.vim -N \"+set hidden\" \"+syntax on\" +BundleClean +BundleInstall +qall"
-  cmd("vim --noplugin -N -e -s -u #{BASE_DIR.join('vim/vundles.vim')} +BundleInstall +qall ")
+  cmd("vim --noplugin -N -e -s -u #{BASE_DIR.join('vim/vundles.vim')} +NeoBundleInstall +qall ")
 end
 
