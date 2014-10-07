@@ -57,9 +57,7 @@ namespace :prezto do
       warning("Prezto is already installed, skipping ...")
       next
     end
-    cmd("git clone #{prezto_repo} #{PREZTO_DIR}")
-    init_submodules(PREZTO_DIR)
-    update_submodules(PREZTO_DIR)
+    cmd("git clone --recursive #{prezto_repo} #{PREZTO_DIR}")
   end
 
   desc "Update prezto"
@@ -185,10 +183,6 @@ end
 
 def colorize(text, color)
   "\e[#{VT100_COLORS[color] || VT100_COLORS[:white]}m#{text}\e[0m"
-end
-
-def init_submodules(path)
-  cmd %{cd #{path} && git submodule init --recursive}
 end
 
 def update_submodules(path)
