@@ -197,7 +197,7 @@ end
 
 def install_vundle
   vundle_path = "https://github.com/Shougo/neobundle.vim"
-  cmd("git clone #{vundle_path} #{BASE_DIR.join('.vim/bundle/neobundle')}")
+  cmd("git clone #{vundle_path} #{BASE_DIR.join('vim/bundle/neobundle')}")
 end
 
 def install_vundle_plugins
