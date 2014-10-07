@@ -1,87 +1,90 @@
 filetype off
 
-set rtp+=~/.dot/vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.dot/vim/bundle/neobundle/
+call neobundle#begin(expand('~/.dot/vim/bundle/'))
 
-" let Vundle manage Vundle (required)
-Bundle "gmarik/vundle"
+" Let NeoNeoBundle manage NeoBundle
+" Required:
+NeoNeoBundleFetch 'Shougo/neobundle.vim'
+
 
 
 " Ruby, Rails, Rake...
-Bundle "astashov/vim-ruby-debugger"
-Bundle "ecomba/vim-ruby-refactoring"
-Bundle "skwp/vim-ruby-conque"
-Bundle "tpope/vim-rails.git"
-Bundle "tpope/vim-rake.git"
-Bundle "tpope/vim-rvm.git"
-Bundle "vim-ruby/vim-ruby.git"
+NeoBundle "astashov/vim-ruby-debugger"
+NeoBundle "ecomba/vim-ruby-refactoring"
+NeoBundle "skwp/vim-ruby-conque"
+NeoBundle "tpope/vim-rails.git"
+NeoBundle "tpope/vim-rake.git"
+NeoBundle "tpope/vim-rvm.git"
+NeoBundle "vim-ruby/vim-ruby.git"
 "TODO: add spec related here
 
 " Git related
-  Bundle 'tpope/vim-fugitive'
+  NeoBundle 'tpope/vim-fugitive'
   " Git Browser
-  Bundle "gregsexton/gitv"
+  NeoBundle "gregsexton/gitv"
 
 " Cosmetics, color scheme, Powerline...
-Bundle "Lokaltog/powerline.git", {'rtp': 'powerline/bindings/vim/'}
-Bundle "rainux/vim-desert-warm-256"
+NeoBundle "Lokaltog/powerline.git", {'rtp': 'powerline/bindings/vim/'}
+NeoBundle "rainux/vim-desert-warm-256"
 
 " General text editing improvements...
-  Bundle "vim-scripts/matchit.zip.git"
+  NeoBundle "vim-scripts/matchit.zip.git"
   " Multiline/singleline notation
-  Bundle "AndrewRadev/splitjoin.vim"
+  NeoBundle "AndrewRadev/splitjoin.vim"
   " Automatic closing of quotes, parenthesis, brackets
-  Bundle "Raimondi/delimitMate"
+  NeoBundle "Raimondi/delimitMate"
   " Change inside surroundings
-  Bundle "briandoll/change-inside-surroundings.vim.git"
+  NeoBundle "briandoll/change-inside-surroundings.vim.git"
   " Snippets & deps
-  Bundle "MarcWeber/vim-addon-mw-utils"
-  Bundle "tomtom/tlib_vim"
-  Bundle "garbas/vim-snipmate"
+  NeoBundle "MarcWeber/vim-addon-mw-utils"
+  NeoBundle "tomtom/tlib_vim"
+  NeoBundle "garbas/vim-snipmate"
   " Snippets pack 
-  Bundle "honza/vim-snippets"
+  NeoBundle "honza/vim-snippets"
   " Allow move in camelcase words
-  Bundle "vim-scripts/camelcasemotion.git"
-  Bundle "t9md/vim-choosewin"
-  " Bundle "godlygeek/tabular"
+  NeoBundle "vim-scripts/camelcasemotion.git"
+  NeoBundle "t9md/vim-choosewin"
+  " NeoBundle "godlygeek/tabular"
 
 " General improvements
-  Bundle "rking/ag.vim"
-  Bundle "jistr/vim-nerdtree-tabs.git"
-  Bundle "scrooloose/nerdtree.git"
-  Bundle "kien/ctrlp.vim"
-  Bundle "scrooloose/syntastic.git"
+  NeoBundle "rking/ag.vim"
+  NeoBundle "jistr/vim-nerdtree-tabs.git"
+  NeoBundle "scrooloose/nerdtree.git"
+  NeoBundle "kien/ctrlp.vim"
+  NeoBundle "scrooloose/syntastic.git"
   " Dark theme
-  Bundle "chriskempson/base16-vim"
+  NeoBundle "chriskempson/base16-vim"
   " Awesome undo tool
-  Bundle "sjl/gundo.vim"
-  Bundle "skwp/vim-conque"
-  Bundle "Valloric/YouCompleteMe"
-  Bundle "marijnh/tern_for_vim"
+  NeoBundle "sjl/gundo.vim"
+  NeoBundle "skwp/vim-conque"
+  NeoBundle "Valloric/YouCompleteMe"
+  NeoBundle "marijnh/tern_for_vim"
   " Automatically update tags on save
   " It's slowing down the vim
-  "Bundle "vim-scripts/AutoTag.git"
+  "NeoBundle "vim-scripts/AutoTag.git"
   " Open files with line number after colon
-  Bundle "bogado/file-line.git"
+  NeoBundle "bogado/file-line.git"
   " Buffer and FS explorer
-  Bundle "sjbach/lusty.git"
+  NeoBundle "sjbach/lusty.git"
   " Ctags support & deps
-  "Bundle "xolox/vim-easytags"
-  "Bundle "xolox/vim-misc"
+  "NeoBundle "xolox/vim-easytags"
+  "NeoBundle "xolox/vim-misc"
   " Autocomplete
-  Bundle "Shougo/neocomplcache.git"
+  NeoBundle "Shougo/neocomplcache.git"
 
 " HTML, CSS, Markdown, SASS ...
   " Markdown
-  Bundle "jtratner/vim-flavored-markdown.git"
-  Bundle "nelstrom/vim-markdown-preview"
+  NeoBundle "jtratner/vim-flavored-markdown.git"
+  NeoBundle "nelstrom/vim-markdown-preview"
 
   " Javascript
-  Bundle "pangloss/vim-javascript"
+  NeoBundle "pangloss/vim-javascript"
 
-  "Bundle "aaronjensen/vim-sass-status.git"
-  Bundle "groenewege/vim-less.git"
-  Bundle "itspriddle/vim-jquery.git"
-  Bundle "kchmck/vim-coffee-script"
-  Bundle "tpope/vim-haml"
+  "NeoBundle "aaronjensen/vim-sass-status.git"
+  NeoBundle "groenewege/vim-less.git"
+  NeoBundle "itspriddle/vim-jquery.git"
+  NeoBundle "kchmck/vim-coffee-script"
+  NeoBundle "tpope/vim-haml"
 
+call neobundle#end()
