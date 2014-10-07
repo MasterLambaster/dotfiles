@@ -65,8 +65,6 @@ NeoBundle "rainux/vim-desert-warm-256"
   "NeoBundle "vim-scripts/AutoTag.git"
   " Open files with line number after colon
   NeoBundle "bogado/file-line.git"
-  " Buffer and FS explorer
-  NeoBundle "sjbach/lusty.git"
   " Ctags support & deps
   "NeoBundle "xolox/vim-easytags"
   "NeoBundle "xolox/vim-misc"
