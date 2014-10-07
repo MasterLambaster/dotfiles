@@ -22,8 +22,8 @@ Bundle "vim-ruby/vim-ruby.git"
   " Git Browser
   Bundle "gregsexton/gitv"
 
-" Cosmetics, color scheme, Powerline...
-Bundle "Lokaltog/powerline.git", {'rtp': 'powerline/bindings/vim/'}
+" Cosmetics, color scheme, airline ...
+Plugin 'bling/vim-airline'
 Bundle "rainux/vim-desert-warm-256"
 
 " General text editing improvements...
