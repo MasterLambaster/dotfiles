@@ -5,8 +5,7 @@ call neobundle#begin(expand('~/.dot/vim/bundle/'))
 
 " Let NeoNeoBundle manage NeoBundle
 " Required:
-NeoNeoBundleFetch 'Shougo/neobundle.vim'
-
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 
 " Ruby, Rails, Rake...
@@ -40,7 +39,7 @@ NeoBundle "rainux/vim-desert-warm-256"
   NeoBundle "MarcWeber/vim-addon-mw-utils"
   NeoBundle "tomtom/tlib_vim"
   NeoBundle "garbas/vim-snipmate"
-  " Snippets pack 
+  " Snippets pack
   NeoBundle "honza/vim-snippets"
   " Allow move in camelcase words
   NeoBundle "vim-scripts/camelcasemotion.git"
