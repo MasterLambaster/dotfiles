@@ -47,3 +47,5 @@
 [user]
   name = MasterLambaster
   email = masterlambaster@gmail.com
+[push]
+  default = current
