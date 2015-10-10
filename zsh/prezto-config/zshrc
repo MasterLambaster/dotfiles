@@ -21,6 +21,9 @@ if [ -d $HOME/.dot/zsh/config/ ]; then
   fi
 fi
 
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 if [ -d $HOME/.zsh.after/ ]; then
   if [ "$(ls -A $HOME/.zsh.after/)" ]; then
     for config_file ($HOME/.zsh.after/*.zsh) source $config_file
