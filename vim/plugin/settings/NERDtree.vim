@@ -4,6 +4,8 @@ let g:NERDTreeWinSize = 30
 let NERDTreeShowHidden=1
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.git']
+
+let g:nerdtree_tabs_open_on_gui_startup = 0
 " Jump in nerd tree means vim cd
 
 "autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
