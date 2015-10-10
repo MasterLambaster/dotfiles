@@ -17,6 +17,7 @@ alias tlog="less log/test.log"
 alias g="git"
 
 # Bundler
+alias be="bundle exec"
 alias bi="bundle install"
 
 # Ruby tests
