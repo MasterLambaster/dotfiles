@@ -84,4 +84,6 @@ NeoBundle "rainux/vim-desert-warm-256"
   NeoBundle "kchmck/vim-coffee-script"
   NeoBundle "tpope/vim-haml"
 
+  NeoBundle "wting/rust.vim"
+
 call neobundle#end()
