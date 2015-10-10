@@ -89,4 +89,8 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " No default mapping for ruby debugger
 let g:ruby_debugger_no_maps = 1
 
-colorscheme base16-tomorrow
+
+set t_Co=256 " Set number of colors in terminal
+set background=dark
+let base16colorspace=256  " Access colors present in 256 colorspace"
+colorscheme gruvbox

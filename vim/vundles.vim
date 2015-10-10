@@ -27,6 +27,8 @@ NeoBundle "vim-ruby/vim-ruby.git"
 NeoBundle 'bling/vim-airline'
 NeoBundle "rainux/vim-desert-warm-256"
 
+NeoBundle 'morhetz/gruvbox'
+
 " General text editing improvements...
   NeoBundle "vim-scripts/matchit.zip.git"
   " Multiline/singleline notation
