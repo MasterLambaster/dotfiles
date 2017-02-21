@@ -79,6 +79,7 @@ NeoBundle 'morhetz/gruvbox'
 
   " Javascript
   NeoBundle "pangloss/vim-javascript"
+  NeoBundle "posva/vim-vue"
 
   "NeoBundle "aaronjensen/vim-sass-status.git"
   NeoBundle "groenewege/vim-less.git"
