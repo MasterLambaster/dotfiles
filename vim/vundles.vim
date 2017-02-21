@@ -53,7 +53,8 @@ NeoBundle 'morhetz/gruvbox'
   NeoBundle "jistr/vim-nerdtree-tabs.git"
   NeoBundle "scrooloose/nerdtree.git"
   NeoBundle "kien/ctrlp.vim"
-  NeoBundle "scrooloose/syntastic.git"
+  NeoBundle "w0rp/ale"
+
   " Dark theme
   NeoBundle "chriskempson/base16-vim"
   " Awesome undo tool
